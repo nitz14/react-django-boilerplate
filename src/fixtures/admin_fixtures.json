@@ -1,0 +1,18 @@
+[
+  {
+    "model": "accounts.user",
+    "fields": {
+      "password": "pbkdf2_sha256$100000$pKSBuabJ0kSb$AVnFywimlfLba7ncAyPEyqqAQZmVu+2jUuSo6XGqLZU=",
+      "last_login": "2018-2-28T00:57:23.201Z",
+      "first_name": "Admin_First_Name",
+      "last_name": "Admin_Last_Name",
+      "email": "admin@admin.com",
+      "is_staff": true,
+      "is_active": true,
+      "is_superuser": true,
+      "date_joined": "2018-2-28T00:57:23.201Z",
+      "date_updated": "2018-2-28T00:57:23.201Z",
+      "activation_key": "64f5b041-81ed-4251-bf62-54b9c0a14848"
+    }
+  }
+]

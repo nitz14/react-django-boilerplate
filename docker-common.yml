@@ -1,0 +1,38 @@
+version: '2'
+
+services:
+    nginx:
+        restart: always
+        image: nginx:1.11.6-alpine
+    postgres:
+        restart: always
+        image: postgres:10.1
+        expose:
+            - 5432
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: password
+            POSTGRES_DB: db_name
+        ports:
+            - 5434:5432
+    django:
+        restart: always
+        build:
+            context: .
+            dockerfile: ./docker/django/Dockerfile
+        volumes:
+            - .:/django
+    web:
+        restart: always
+        build:
+            context: .
+            dockerfile: ./docker/web/Dockerfile
+        volumes:
+            - .:/django
+    redis:
+        restart: always
+        image: redis:latest
+        volumes:
+            - .:/django
+        expose:
+            - 6379
